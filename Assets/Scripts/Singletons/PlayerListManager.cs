@@ -45,9 +45,7 @@ public class PlayerListManager : MonoBehaviour {
         }
         for (int i = listOfPlayers.Count - 1; i >= 0; i--) {
             if (listOfPlayers[i].controls.GetButtonStartDown()) {
-                if (listOfPlayers.Count >= 1) {
-                    ShowStartMessage();
-                }
+                AddPlayer(listOfAvailablePlayers[i]);
             }
         }
     }
@@ -67,9 +65,5 @@ public class PlayerListManager : MonoBehaviour {
         listOfAvailablePlayers.Add(playerId);
         listOfPlayers.Remove(playerId);
 		playerLeaving.Invoke(playerId);
-    }
-
-    private void ShowStartMessage() {
-        GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 200f, 200f), "A player has started the game!");
     }
 }
