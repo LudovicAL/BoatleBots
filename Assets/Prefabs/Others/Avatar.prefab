@@ -640,7 +640,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752278459137264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.626903, y: 2.95, z: 5.6319566}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4707854037756704}
@@ -1883,6 +1883,18 @@ MonoBehaviour:
   playerActions: {fileID: 114640076510983834}
   playerSounds: {fileID: 114168901046932254}
   audioSource: {fileID: 82078165618938600}
+  leftCannons:
+  - {fileID: 1540145076841162}
+  - {fileID: 1990162268013432}
+  - {fileID: 1579748059357888}
+  - {fileID: 1614990654741548}
+  - {fileID: 1027124501035180}
+  rightCannons:
+  - {fileID: 1178290764513236}
+  - {fileID: 1824943272196336}
+  - {fileID: 1232205924098364}
+  - {fileID: 1562189205591736}
+  - {fileID: 1862266833659322}
 --- !u!114 &114640076510983834
 MonoBehaviour:
   m_ObjectHideFlags: 1
