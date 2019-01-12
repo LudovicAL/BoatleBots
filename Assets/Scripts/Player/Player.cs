@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     public AudioSource audioSource;
     public List<GameObject> leftCannons;
     public List<GameObject> rightCannons;
+    public PlayerCollision playerCollision;
 
     // Use this for initialization
     void Start () {

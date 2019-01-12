@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currentHealth = player.playerId.maxHealth;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {

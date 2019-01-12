@@ -1376,6 +1376,7 @@ MonoBehaviour:
   - {fileID: 1232205924098364}
   - {fileID: 1562189205591736}
   - {fileID: 1862266833659322}
+  playerCollision: {fileID: 8213394930709911180}
 --- !u!114 &114640076510983834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,6 +1599,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 114589985034945924}
+  playerHitByCannonBall:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PlayerCollision+PlayerHitByCannonball, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1773165759542640
 GameObject:
   m_ObjectHideFlags: 0
