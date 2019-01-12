@@ -1,0 +1,85 @@
+Primaire :
+    •	Créer des modèles de bateaux – Ludovic
+    •	Faire flotter les bateaux - Dominic
+        Comment faire :
+        Il faut créer un gameobject, le placer au centre de l’espace de jeu, et lui mettre un composant de type BuoyancyEffector. Ce composant va agir comme de l’eau et simuler une force repoussant vers le haut tous les objets poussés vers le bas par la gravité.
+    •	Déplacement des bateaux – Marc
+    •	Système de canons (Il faut un temps de recharge entre chaque tir de canon et un indicateur visuel pour que le joueur sache que ses canons sont prêts à tirer. Peut-être changer la couleur des canons au rouge après un tir et revenir linéairement à la couleur initiale pendant le temps de recharge) – Vincent
+        Comment faire :
+        Ajouter sur le canon de nouvelle variables :
+                        public Color coolingDownColor = color.red;
+        public float coolingDownTime = 3.0f;
+        private bool isCoolingDown;
+        private float endOfCoolingDown;
+        private Color normalColor;
+                                                       Quand le script charge (dans le start), il faut initialiser les variables private:
+                                                                       isCoolingDown = false;
+                                                                       normalColor = GetComponent<Renderer>().color;
+        Quand le joueur pèse sur le bouton pour faire feu:
+        if (!isCoolingDown) {
+        Shoot();
+        isCoolingDown = true;
+        endOfCoolingDown = Time.time + coolingDownTime;
+        }
+                                                       À chaque update :
+                                                                       If (isCoolingDown) {
+        //Insérer ici le code necessaire pour interpoler la couleur du canon de coolingDownColor à normalColor
+        //Croyez en mon expérience, le changement de couleur doit être fait à une vitesse linéaire (pas logarithmique ou exponentielle)
+        if (Time.time > endOfCoolingDown) {
+        isCoolingDown = false;
+        }
+        }             
+    •	Détecter les collisions des bateaux avec les autres bateaux
+        Comment faire :
+        Assurez-vous que les bateaux on le tag « Boat », mettez sur leur gameobject un Component de type Collider ainsi qu’un script qui contient la fonction suivante (elle est appelée automatiquement par l’engin lorsqu’une collision a lieu) :
+        void OnCollisionEnter(Collision collision) {
+        if (collision.gameobject.CompareTag(“Boat”) {
+        //Insert here some function so your boat takes collision damages
+        }
+        }
+    •	Détecter les collisions des bateaux avec les boulets de canon
+        Comment faire :
+        Assurez-vous que les boulets de canon on le tag « Canonball », puis mettez sur le gameobject du bateau un Component de type Collider ainsi qu’un script qui contient la fonction suivante (elle est appelée automatiquement par l’engin lorsqu’une collision a lieu) :
+        void OnCollisionEnter(Collision collision) {
+        if (collision.gameobject.CompareTag(“Canonball”) {
+        //Insert here some function so your boat takes damages
+        }
+        }
+    •	Condition de victoire (il faut détecter quand il ne reste qu’un joueur en jeu et arrêter la partie à ce moment)
+        Comment faire :
+        Il y a un script qui s’appelle playerListManager (ou quelque chose comme ça). Il faudra faire en sorte qu’à chaque fois qu’un joueur est éliminé dans une partie, il est aussi effacé de la liste des joueur actifs contenu dans le playerList Manager. Il faut aussi faire en sorte qu’à chaque fois qu’un joueur est effacé de la liste des joueurs actifs contenu dans le playerListManager, ce dernier vérifie le nombre de joueurs actifs restants et demande l’arrêt du jeu s’il n’en reste qu’un seul.
+    •	Préparer la transition du menu au jeu et du jeu au menu
+        Comment faire :
+        Je m’y connais en menu et je peux aider avec ça. Posez moi vos questions.
+    •	Effets sonores (il faut un outil qu’on peut appeler pour jouer différents sons : coups de canons, explosions de bateau, collision de bateau, une trame musicale)
+        Comment faire :
+        Je crois que Vincent a utilisé le AudioMixer la dernière fois afin de joueur plusieurs son à partir d’un seul émetteur audio. On pourrait utiliser une technique similaire. Je ne m’y connaît pas avec ça cependant, alors demandez à Vincent ou allez voir la documentation en ligne.
+     
+Secondaire :
+    •	Faire apparaître un PREFAB d’explosion de bateau
+        Comment faire :
+        D’abord, il faut instancier un PREFAB qui contient l’explosion avec la fonction Instantiate :
+        Instantiate(monPrefabDExplosion, référenceÀMonGameObject.transform.position, Quaternion.identity);
+        Ensuite pour faire disparaître un bateau, on peut utiliser la fonction Destroy :
+        Destroy(référenceÀMonGameObject);
+        Le PREFAB d’explosion est normalement composé d’un GameObject sur lequel on a placé un composant de type ParticleSystem. Il y a bin du fun a y avoir avec cet outil. Faites en sorte de détruire le GameObject lorsque le ParticleSystem a terminé d’émettre des particules.
+    •	Faire apparaître un PREFAB d’explosion suite au tir de canon
+    •	Faire apparaître un PREFAB d’explosion suite à une collision entre un boulet de canon et un bateau
+    •	Afficher une barre de points de vie au-dessus de chaque bateau
+    •	Donner une couleur différente aux voiles des bateaux de chaque joueur
+        Comment faire :
+        Je crois que pour nos besoin, on pourrait hard-coder des valeurs de couleur directement dans les scriptable objets qui définissent les caractéristiques des joueurs.
+    •	Afficher un écran de victoire à la fin du jeu qui indique quel joueur a gagné (et afficher sa couleur?)
+     
+Tertiaire :
+    •	ACTION : A - Boat Sprint, double the speed
+    •	ACTION: B - Ram (melee attack from front, if it connects make you immune to collision damage in the next 2 seconds)
+    •	ACTION: X - Leave a mine behind (10 seconds cd, deals damage)
+    •	Préparer un PREFAB d’explosion de mine
+    •	ACTION: Y - Slow the boat
+    •	Ajouter du vent (avec le Area Effector) et un indicateur visuel (une boussole) qui indique aux joueurs dans quelle direction le vent souffle
+    •	Concevoir une intelligence artificielle qui peut déplacer les bateaux et les faire tirer au bon moment
+    •	Quand le joueur pèse sur ‘START’ ça met le jeu en pause
+    •	Faire un écran de menu dans lequel les joueurs peuvent choisir leur modèle de bateau parmi une sélection
+    •	Faire un système de vies et de respawn
+    •	Faire un système permettant de jouer en équipe

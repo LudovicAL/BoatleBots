@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4388117240587234}
   - component: {fileID: 114901444590599284}
   m_Layer: 0
-  m_Name: PlayersManager
+  m_Name: PlayerListManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18227f4100446a14d91b1b7bb7c4d20e, type: 2}
   - {fileID: 11400000, guid: 14cbff6b575a41041b9c0a00e2b0e8ba, type: 2}
   - {fileID: 11400000, guid: 8964d67e0cf387a47a8d952466d29c1d, type: 2}
-  - {fileID: 11400000, guid: deb5166429a423d4daee9eea857a3bc8, type: 2}
   - {fileID: 11400000, guid: 55666f2f6bf9eb9448a0890abd047e0a, type: 2}
   - {fileID: 11400000, guid: 52b022adf54aa03408daf6086e844663, type: 2}
   - {fileID: 11400000, guid: 7a2a5f11bbe16d346964d0576c9b657f, type: 2}
@@ -68,13 +67,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 886f23e18020366498e536cf0c4ff4e1, type: 2}
   - {fileID: 11400000, guid: 4ef07a4d28e57d141ac3e4d00f03e262, type: 2}
   - {fileID: 11400000, guid: a869273f3999c4347b84407a5c281597, type: 2}
-  playerJoined:
+  playerJoining:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: PlayerJoinedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: PlayerJoiningEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  playerLeft:
+  playerLeaving:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: PlayerLeftEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: PlayerLeavingEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null

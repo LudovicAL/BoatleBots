@@ -9,6 +9,7 @@ public class PlayerId : ScriptableObject {
     public Controls controls;
 	public SetOfSoundsFx setOfSoundsFx;
 	public int maxHealth = 100;
+	public Color color;
 
 	[HideInInspector]
 	public Player player;

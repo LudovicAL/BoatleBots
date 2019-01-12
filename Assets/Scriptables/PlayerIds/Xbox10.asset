@@ -14,5 +14,10 @@ MonoBehaviour:
   playerName: Xbox10
   controls: {fileID: 11400000, guid: abe63b64a5b16aa4194ce950511278bc, type: 2}
   setOfSoundsFx: {fileID: 11400000, guid: 7ff31ca71b8fdf44699659dd15e2fed0, type: 2}
+  maxHealth: 100
+  color: {r: 0, g: 0.43849897, b: 1, a: 0}
+  player: {fileID: 0}
   panelJoin: {fileID: 0}
+  panelHealthBar: {fileID: 0}
+  greenHealthBar: {fileID: 0}
   avatar: {fileID: 0}

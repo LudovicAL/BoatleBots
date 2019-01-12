@@ -15,6 +15,7 @@ MonoBehaviour:
   controls: {fileID: 11400000, guid: 6b52c9969a200094d8f030ec3a9863c3, type: 2}
   setOfSoundsFx: {fileID: 11400000, guid: 7ff31ca71b8fdf44699659dd15e2fed0, type: 2}
   maxHealth: 100
+  color: {r: 1, g: 0, b: 0, a: 0}
   player: {fileID: 0}
   panelJoin: {fileID: 0}
   panelHealthBar: {fileID: 0}

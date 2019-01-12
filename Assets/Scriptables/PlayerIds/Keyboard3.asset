@@ -14,5 +14,10 @@ MonoBehaviour:
   playerName: Keyboard3
   controls: {fileID: 11400000, guid: dbc7032df51088246a1d23ff521716f0, type: 2}
   setOfSoundsFx: {fileID: 11400000, guid: 7ff31ca71b8fdf44699659dd15e2fed0, type: 2}
+  maxHealth: 100
+  color: {r: 0, g: 0.15345383, b: 1, a: 0}
+  player: {fileID: 0}
   panelJoin: {fileID: 0}
+  panelHealthBar: {fileID: 0}
+  greenHealthBar: {fileID: 0}
   avatar: {fileID: 0}
