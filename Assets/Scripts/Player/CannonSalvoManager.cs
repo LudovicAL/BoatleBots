@@ -25,34 +25,28 @@ public class CannonSalvoManager : MonoBehaviour {
     }
 
     public void ShootSalvoLeft(PlayerId playerid) {
-        StartCoroutine(shootSalvoCoroutine(player.leftCannons, true));
+        StartCoroutine(shootSalvoCoroutine(player.leftCannons));
     }
 
     public void ShootSalvoRight(PlayerId playerid) {
-        StartCoroutine(shootSalvoCoroutine(player.rightCannons, false));
+        StartCoroutine(shootSalvoCoroutine(player.rightCannons));
     }
 
-    private IEnumerator shootSalvoCoroutine(List<GameObject> cannons, bool isLeft)
+    private IEnumerator shootSalvoCoroutine(List<GameObject> cannons)
     {
         foreach (GameObject cannon in cannons) {
-            instantiateAndShootCannonball(cannon, isLeft);
+            instantiateAndShootCannonball(cannon);
             yield return new WaitForSeconds(.15f);
         }
     }
 
-    private void instantiateAndShootCannonball(GameObject cannon, bool isLeft) {
+    private void instantiateAndShootCannonball(GameObject cannon) {
         GameObject cannonball = Instantiate(cannonBallPrefab, cannon.transform.position, Quaternion.identity);
         GameObject smokeAndFire = Instantiate(smokeAndFirePrefab, cannon.transform.position, Quaternion.identity);
-
-        if(isLeft)
-        {
-            smokeAndFire.transform.Rotate(0, 180, 0);
-        } else
-        {
-            cannon.transform.Rotate(0, 180, 0);
-        }
+       
 
         cannonball.GetComponent<Rigidbody>().AddForce(cannon.transform.forward * cannonForce, ForceMode.Impulse);
+        smokeAndFire.transform.Rotate(cannon.transform.forward);
         smokeAndFire.GetComponent<ParticleSystem>().Play();
         sm.playCannonSound();
     }

@@ -9250,7 +9250,7 @@ MonoBehaviour:
     type: 3}
   smokeAndFirePrefab: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78,
     type: 3}
-  cannonForce: 300
+  cannonForce: 3000
 --- !u!114 &1388546668
 MonoBehaviour:
   m_ObjectHideFlags: 0
