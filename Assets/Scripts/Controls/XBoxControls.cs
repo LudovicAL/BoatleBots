@@ -29,7 +29,7 @@ public class XBoxControls : Controls {
 
     //Bumpers
     private string lBumper = "lBumper";
-    private string rBumper = "1rBumper";
+    private string rBumper = "rBumper";
 
     //Others
     private string buttonStart = "buttonStart";

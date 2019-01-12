@@ -19,8 +19,8 @@ public class PlayerActions : MonoBehaviour {
 	private float m_Speed;
 	private bool m_AreSailsUp;
 
-	public PlayerAttackingLeft playerAttackingRight = new PlayerAttackingLeft();
-    public PlayerAttackingRight playerAttackingLeft = new PlayerAttackingRight();
+	public PlayerAttackingLeft playerAttackingLeft = new PlayerAttackingLeft();
+    public PlayerAttackingRight playerAttackingRight = new PlayerAttackingRight();
 
     [System.Serializable]
 	public class PlayerAttackingLeft : UnityEvent<PlayerId> { }
@@ -36,11 +36,14 @@ public class PlayerActions : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (player.playerId.controls.GetRBumperDown()) {
-			ShootSalvoRight();
+		if (player.playerId.controls.GetRBumperDown())
+        {
+            Debug.Log("R - BUMBER");
+            ShootSalvoRight();
         }
         if (player.playerId.controls.GetLBumperDown())
         {
+            Debug.Log("L - BUMBER");
             ShootSalvoLeft();
         }
     }
@@ -97,7 +100,7 @@ public class PlayerActions : MonoBehaviour {
 	}
 
 	public void ShootSalvoRight() {
-		playerAttackingLeft.Invoke(player.playerId);
+		playerAttackingRight.Invoke(player.playerId);
 	}
 
     public void ShootSalvoLeft() {
