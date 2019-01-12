@@ -4,7 +4,8 @@ Primaire :
         Comment faire :
         Il faut créer un gameobject, le placer au centre de l’espace de jeu, et lui mettre un composant de type BuoyancyEffector. Ce composant va agir comme de l’eau et simuler une force repoussant vers le haut tous les objets poussés vers le bas par la gravité.
     •	Déplacement des bateaux – Marc
-    •	Système de canons (Il faut un temps de recharge entre chaque tir de canon et un indicateur visuel pour que le joueur sache que ses canons sont prêts à tirer. Peut-être changer la couleur des canons au rouge après un tir et revenir linéairement à la couleur initiale pendant le temps de recharge) – Vincent
+    •	Système de canons (Il faut un temps de recharge entre chaque tir de canon et un indicateur visuel pour que le joueur sache que ses canons sont prêts à tirer. Peut-être changer la couleur des canons au rouge après un tir et revenir linéairement à la couleur initiale pendant le temps de recharge) –
+	Vincent
         Comment faire :
         Ajouter sur le canon de nouvelle variables :
                         public Color coolingDownColor = color.red;

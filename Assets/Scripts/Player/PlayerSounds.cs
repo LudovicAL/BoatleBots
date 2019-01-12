@@ -8,7 +8,7 @@ public class PlayerSounds : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player.playerActions.playerAttacking.AddListener(OnPlayerAttacking);
+		player.playerActions.playerAttackingLeft.AddListener(OnPlayerAttacking);
 		player.playerHealth.playerTakingDamage.AddListener(OnPlayerTakingDamage);
 		player.playerHealth.playerDying.AddListener(OnPlayerDying);
 	}

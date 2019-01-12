@@ -9,7 +9,7 @@ public class PlayerActionsEditor : Editor {
 
 		PlayerActions playerActions = (PlayerActions)target;
 		if (GUILayout.Button("Attack")) {
-			playerActions.Attack();
+			playerActions.ShootSalvoRight();
 		}
 	}
 }

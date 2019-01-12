@@ -19,23 +19,31 @@ public class PlayerActions : MonoBehaviour {
 	private float m_Speed;
 	private bool m_AreSailsUp;
 
-	public PlayerAttacking playerAttacking = new PlayerAttacking();
+	public PlayerAttackingLeft playerAttackingRight = new PlayerAttackingLeft();
+    public PlayerAttackingRight playerAttackingLeft = new PlayerAttackingRight();
 
-	[System.Serializable]
-	public class PlayerAttacking : UnityEvent<PlayerId> {}
+    [System.Serializable]
+	public class PlayerAttackingLeft : UnityEvent<PlayerId> { }
 
-	// Use this for initialization
-	void Start () {
+    [System.Serializable]
+    public class PlayerAttackingRight : UnityEvent<PlayerId> { }
+
+    // Use this for initialization
+    void Start () {
 		selfRigidbody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (player.playerId.controls.GetButtonXDown()) {
-			Attack();
-		}
-	}
+		if (player.playerId.controls.GetRBumperDown()) {
+			ShootSalvoRight();
+        }
+        if (player.playerId.controls.GetLBumperDown())
+        {
+            ShootSalvoLeft();
+        }
+    }
 
 	private void FixedUpdate() {
 		Debug.DrawLine(transform.position, transform.position + (transform.forward * 3.0f));
@@ -88,7 +96,11 @@ public class PlayerActions : MonoBehaviour {
 		}
 	}
 
-	public void Attack() {
-		playerAttacking.Invoke(player.playerId);
+	public void ShootSalvoRight() {
+		playerAttackingLeft.Invoke(player.playerId);
 	}
+
+    public void ShootSalvoLeft() {
+        playerAttackingLeft.Invoke(player.playerId);
+    }
 }
