@@ -41,13 +41,11 @@ public class CannonSalvoManager : MonoBehaviour {
     }
 
     private void instantiateAndShootCannonball(GameObject cannon) {
-        GameObject cannonball = Instantiate(cannonBallPrefab, cannon.transform.position, Quaternion.identity);
-        GameObject smokeAndFire = Instantiate(smokeAndFirePrefab, cannon.transform.position, Quaternion.identity);
-       
-
+        GameObject cannonball = Instantiate(cannonBallPrefab, cannon.transform.position, Quaternion.identity);       
         cannonball.GetComponent<Rigidbody>().AddForce(cannon.transform.forward * cannonForce, ForceMode.Impulse);
-        smokeAndFire.transform.TransformVector(cannon.transform.forward);
-        smokeAndFire.GetComponent<ParticleSystem>().Play();
+
+		cannon.GetComponentInChildren<ParticleSystem>().Play(true);
+
         sm.playCannonSound();
     }
 
