@@ -35,7 +35,7 @@ public class PlayerActions : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		Debug.Log("ha");
 		if (player.playerId.controls.GetRBumperDown())
         {
             Debug.Log("R - BUMBER");
