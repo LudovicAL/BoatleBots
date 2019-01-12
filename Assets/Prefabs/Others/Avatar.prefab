@@ -1582,6 +1582,8 @@ MonoBehaviour:
   player: {fileID: 114589985034945924}
   cannonBallPrefab: {fileID: 1443647189244252, guid: 538e5cecffbf9a847adb543ed2a179bb,
     type: 3}
+  smokeAndFirePrefab: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78,
+    type: 3}
   cannonForce: 3000
 --- !u!114 &8213394930709911180
 MonoBehaviour:

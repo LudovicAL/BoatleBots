@@ -6,6 +6,7 @@ public class CannonSalvoManager : MonoBehaviour {
     
     public Player player;
     public GameObject cannonBallPrefab;
+    public GameObject smokeAndFirePrefab;
     public float cannonForce = 300f;
 
     // Use this for initialization
@@ -38,6 +39,10 @@ public class CannonSalvoManager : MonoBehaviour {
     private void instantiateAndShootCannonball(GameObject cannon) {
         GameObject cannonball = Instantiate(cannonBallPrefab, cannon.transform.position, Quaternion.identity);
         cannonball.GetComponent<Rigidbody>().AddForce(cannon.transform.forward * cannonForce, ForceMode.Impulse);
+        
+        GameObject smokeAndFire = Instantiate(smokeAndFirePrefab, cannon.transform.position, Quaternion.identity);
+        smokeAndFire.transform.Rotate(0, 90, 0);
+        smokeAndFire.GetComponent<ParticleSystem>().Play();
     }
 
 }
