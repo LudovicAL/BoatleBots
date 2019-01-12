@@ -5,26 +5,31 @@ using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public int currentHealth;
-	public Player player;
-	public PlayerTakingDamage playerTakingDamage = new PlayerTakingDamage();
-	public PlayerDying playerDying = new PlayerDying();
+    public int currentHealth;
+    public Player player;
+    public PlayerTakingDamage playerTakingDamage = new PlayerTakingDamage();
+    public PlayerDying playerDying = new PlayerDying();
 
-	[System.Serializable]
-	public class PlayerTakingDamage : UnityEvent<PlayerId, float> {}
+    [System.Serializable]
+    public class PlayerTakingDamage : UnityEvent<PlayerId, float> { }
 
-	[System.Serializable]
-	public class PlayerDying : UnityEvent<PlayerId> {}
+    [System.Serializable]
+    public class PlayerDying : UnityEvent<PlayerId> { }
 
-	// Use this for initialization
-	void Start () {
-		currentHealth = player.playerId.maxHealth;
+    // Use this for initialization
+    void Start() {
+        currentHealth = player.playerId.maxHealth;
+        player.playerCollision.playerHitByCannonBall.AddListener(OnTakeDamageCannonBall);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update() {
+     
+    }
+
+    public void OnTakeDamageCannonBall() {
+        TakeDamage(15);
+    }
 
 	//Call this function when dealing damage to this player
 	public void TakeDamage(int amount) {
