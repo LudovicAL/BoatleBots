@@ -21,27 +21,34 @@ public class CannonSalvoManager : MonoBehaviour {
     }
 
     public void ShootSalvoLeft(PlayerId playerid) {
-        StartCoroutine(shootSalvoCoroutine(player.leftCannons));
+        StartCoroutine(shootSalvoCoroutine(player.leftCannons, true));
     }
 
     public void ShootSalvoRight(PlayerId playerid) {
-        StartCoroutine(shootSalvoCoroutine(player.rightCannons));
+        StartCoroutine(shootSalvoCoroutine(player.rightCannons, false));
     }
 
-    private IEnumerator shootSalvoCoroutine(List<GameObject> cannons)
+    private IEnumerator shootSalvoCoroutine(List<GameObject> cannons, bool isLeft)
     {
         foreach (GameObject cannon in cannons) {
-            instantiateAndShootCannonball(cannon);
+            instantiateAndShootCannonball(cannon, isLeft);
             yield return new WaitForSeconds(.15f);
         }
     }
 
-    private void instantiateAndShootCannonball(GameObject cannon) {
+    private void instantiateAndShootCannonball(GameObject cannon, bool isLeft) {
         GameObject cannonball = Instantiate(cannonBallPrefab, cannon.transform.position, Quaternion.identity);
-        cannonball.GetComponent<Rigidbody>().AddForce(cannon.transform.forward * cannonForce, ForceMode.Impulse);
-        
         GameObject smokeAndFire = Instantiate(smokeAndFirePrefab, cannon.transform.position, Quaternion.identity);
-        smokeAndFire.transform.Rotate(0, 90, 0);
+
+        if(isLeft)
+        {
+            smokeAndFire.transform.Rotate(0, 180, 0);
+        } else
+        {
+            cannon.transform.Rotate(0, 180, 0);
+        }
+
+        cannonball.GetComponent<Rigidbody>().AddForce(cannon.transform.forward * cannonForce, ForceMode.Impulse);
         smokeAndFire.GetComponent<ParticleSystem>().Play();
     }
 
