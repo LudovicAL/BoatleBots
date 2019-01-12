@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CannonSalvoManager : MonoBehaviour {
-
+    
     public Player player;
+    public GameObject cannonBallPrefab;
 
     // Use this for initialization
     void Start() {
@@ -34,6 +35,10 @@ public class CannonSalvoManager : MonoBehaviour {
     }
 
     private void instantiateAndShootCannonball(GameObject cannon) {
-        
+
+        for (int i = 0; i < 10; i++)
+        {
+            
+        }
     }
 }

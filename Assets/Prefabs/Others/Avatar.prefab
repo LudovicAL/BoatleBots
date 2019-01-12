@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 114412117829473378}
   - component: {fileID: 82078165618938600}
   - component: {fileID: 54046726884218658}
+  - component: {fileID: 114250668852054172}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -1854,6 +1855,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 114589985034945924}
+--- !u!114 &114250668852054172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752278459137264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3e8212724a7c948a8a4e86ee732acf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 114589985034945924}
+  cannonBallPrefab: {fileID: 1443647189244252, guid: 538e5cecffbf9a847adb543ed2a179bb,
+    type: 2}
 --- !u!114 &114412117829473378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1913,11 +1928,16 @@ MonoBehaviour:
   m_MaxSpeed: 10
   m_AccelerationSpeed: 10
   m_DeccelerationSpeed: 10
-  playerAttacking:
+  playerAttackingRight:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: PlayerActions+PlayerAttacking, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: PlayerActions+PlayerAttackingLeft, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  playerAttackingLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PlayerActions+PlayerAttackingRight, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114974416853586554
 MonoBehaviour:
   m_ObjectHideFlags: 1
