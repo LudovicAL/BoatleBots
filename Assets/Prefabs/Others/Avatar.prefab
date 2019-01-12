@@ -1364,6 +1364,7 @@ MonoBehaviour:
   playerActions: {fileID: 114640076510983834}
   playerSounds: {fileID: 114168901046932254}
   audioSource: {fileID: 82078165618938600}
+  playerCollision: {fileID: 8213394930709911180}
   leftCannons:
   - {fileID: 1540145076841162}
   - {fileID: 1990162268013432}
@@ -1595,6 +1596,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 114589985034945924}
+  playerHitByCannonBall:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PlayerCollision+PlayerHitByCannonBall, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1773165759542640
 GameObject:
   m_ObjectHideFlags: 0
