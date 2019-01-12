@@ -9,10 +9,14 @@ public class CannonSalvoManager : MonoBehaviour {
     public GameObject smokeAndFirePrefab;
     public float cannonForce = 300f;
 
+    SoundManager sm;
+
     // Use this for initialization
     void Start() {
         player.playerActions.playerAttackingLeft.AddListener(ShootSalvoLeft);
         player.playerActions.playerAttackingRight.AddListener(ShootSalvoRight);
+
+        sm = GameObject.Find("Main Camera").GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
@@ -50,6 +54,7 @@ public class CannonSalvoManager : MonoBehaviour {
 
         cannonball.GetComponent<Rigidbody>().AddForce(cannon.transform.forward * cannonForce, ForceMode.Impulse);
         smokeAndFire.GetComponent<ParticleSystem>().Play();
+        sm.playCannonSound();
     }
 
 }
