@@ -43,6 +43,11 @@ public class PlayerListManager : MonoBehaviour {
                 AddPlayer(listOfAvailablePlayers[i]);
             }
         }
+        for (int i = listOfPlayers.Count - 1; i >= 0; i--) {
+            if (listOfPlayers[i].controls.GetButtonStartDown()) {
+                AddPlayer(listOfAvailablePlayers[i]);
+            }
+        }
     }
 
 	//Adds a player to the game
