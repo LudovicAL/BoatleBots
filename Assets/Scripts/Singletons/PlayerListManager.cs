@@ -20,6 +20,7 @@ public class PlayerListManager : MonoBehaviour {
     public PlayerLeavingEvent playerLeaving = new PlayerLeavingEvent();
     public GameStartingEvent gameStartingEvent = new GameStartingEvent();
     private bool startGameFlag = false;
+    SoundManager sm;
 
     public static PlayerListManager Instance {get; private set;}
 
@@ -34,6 +35,7 @@ public class PlayerListManager : MonoBehaviour {
 
     void Start () {
         maxNumPlayers = Mathf.Min(maxNumPlayers, listOfAvailablePlayers.Count);
+        sm = GameObject.Find("Main Camera").GetComponent<SoundManager>();
         listOfPlayers = new List<PlayerId> ();
     }
 
@@ -54,6 +56,7 @@ public class PlayerListManager : MonoBehaviour {
             {
                 Debug.Log("Start button pressed, starting game...");
                 gameStartingEvent.Invoke();
+                sm.playThemeSong();
             }
         }
     }

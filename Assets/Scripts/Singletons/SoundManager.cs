@@ -53,6 +53,7 @@ public class SoundManager : MonoBehaviour
     {
         cannonSound = Resources.Load<AudioClip>("Audio/cannonShot");
         splooshSound = Resources.Load<AudioClip>("Audio/waterSploosh");
+        themeSong = Resources.Load<AudioClip>("Audio/Pirate Music Instrumental - The High Seas(320  kbps)");
     }
 
     void Awake()
