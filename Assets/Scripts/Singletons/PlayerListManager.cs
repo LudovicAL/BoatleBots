@@ -9,12 +9,17 @@ public class PlayerJoiningEvent : UnityEvent<PlayerId, bool> {}
 [System.Serializable]
 public class PlayerLeavingEvent : UnityEvent<PlayerId> {}
 
+[System.Serializable]
+public class GameStartingEvent : UnityEvent { }
+
 public class PlayerListManager : MonoBehaviour {
 	public int maxNumPlayers;
 	public List<PlayerId> listOfPlayers {get; private set;}
     public List<PlayerId> listOfAvailablePlayers;
     public PlayerJoiningEvent playerJoining = new PlayerJoiningEvent();
     public PlayerLeavingEvent playerLeaving = new PlayerLeavingEvent();
+    public GameStartingEvent gameStartingEvent = new GameStartingEvent();
+    private bool startGameFlag = false;
 
     public static PlayerListManager Instance {get; private set;}
 
@@ -43,9 +48,12 @@ public class PlayerListManager : MonoBehaviour {
                 AddPlayer(listOfAvailablePlayers[i]);
             }
         }
-        for (int i = listOfPlayers.Count - 1; i >= 0; i--) {
-            if (listOfPlayers[i].controls.GetButtonStartDown()) {
-                AddPlayer(listOfAvailablePlayers[i]);
+        for (int i = listOfPlayers.Count - 1; i >= 0; i--)
+        {
+            if (listOfPlayers[i].controls.GetButtonStartDown())
+            {
+                Debug.Log("Start button pressed, starting game...");
+                gameStartingEvent.Invoke();
             }
         }
     }
