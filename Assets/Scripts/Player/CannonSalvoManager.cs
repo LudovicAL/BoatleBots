@@ -46,7 +46,7 @@ public class CannonSalvoManager : MonoBehaviour {
        
 
         cannonball.GetComponent<Rigidbody>().AddForce(cannon.transform.forward * cannonForce, ForceMode.Impulse);
-        smokeAndFire.transform.Rotate(cannon.transform.forward);
+        smokeAndFire.transform.TransformVector(cannon.transform.forward);
         smokeAndFire.GetComponent<ParticleSystem>().Play();
         sm.playCannonSound();
     }
