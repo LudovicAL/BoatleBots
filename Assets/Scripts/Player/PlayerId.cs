@@ -10,6 +10,7 @@ public class PlayerId : ScriptableObject {
 	public SetOfSoundsFx setOfSoundsFx;
 	public int maxHealth = 100;
 	public Color color;
+	public Vector3 spawnPoint;
 
 	[HideInInspector]
 	public Player player;

@@ -22,7 +22,7 @@ public class PlayerSpawner : MonoBehaviour {
 	}
 
 	private void OnPlayerJoining(PlayerId playerId, bool gameFull) {
-		playerId.avatar = Instantiate(ResourcesLoader.Instance.avatarPrefab);
+		playerId.avatar = Instantiate(ResourcesLoader.Instance.avatarPrefab.gameObject, playerId.spawnPoint, Quaternion.identity);
 		playerId.avatar.GetComponent<Player>().playerId = playerId;
 	}
 
