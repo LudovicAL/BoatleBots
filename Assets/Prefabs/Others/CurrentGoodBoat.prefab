@@ -9033,8 +9033,14 @@ MonoBehaviour:
   playerActions: {fileID: 1388546674}
   playerSounds: {fileID: 1388546673}
   audioSource: {fileID: 1388546670}
-  leftCannons: []
-  rightCannons: []
+  leftCannons:
+  - {fileID: 362916275}
+  - {fileID: 1356554144}
+  - {fileID: 410587174}
+  rightCannons:
+  - {fileID: 643263684}
+  - {fileID: 282968161}
+  - {fileID: 2044740025}
   playerCollision: {fileID: 1388546668}
 --- !u!54 &1388546675
 Rigidbody:
