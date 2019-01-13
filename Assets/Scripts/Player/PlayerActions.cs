@@ -35,18 +35,16 @@ public class PlayerActions : MonoBehaviour {
 	void Update () {
 		if (player.playerId.controls.GetRBumperDown())
         {
-            Debug.Log("R - BUMBER");
             ShootSalvoRight();
         }
         if (player.playerId.controls.GetLBumperDown())
         {
-            Debug.Log("L - BUMBER");
             ShootSalvoLeft();
         }
     }
 
 	private void FixedUpdate() {
-		Debug.DrawLine(transform.position, transform.position + (transform.forward * 3.0f));
+		Debug.DrawLine(player.physicPlatform.transform.position, player.physicPlatform.transform.position + (player.physicPlatform.transform.forward * 3.0f));
 
 		Vector3 localOffset = new Vector3(player.playerId.controls.GetLHorizontal(), 0.0f, player.playerId.controls.GetLVertical());
 		if (localOffset.magnitude > 0.25f) {
@@ -65,25 +63,29 @@ public class PlayerActions : MonoBehaviour {
 			m_Speed -= (Time.fixedDeltaTime * m_DeccelerationSpeed);
 			m_Speed = Mathf.Max(m_Speed, 0.0f);
 		}
-		//PushBoatForwards();
+		PushBoatForwards();
 
 		RotateToRabbit();
 	}
 
+	public void PushBoatForwards() {
+		player.buoyancy.ForwardThrust(m_Speed);
+	}
+
 	private void SetTheRabbit(Vector3 localOffset) {
 		m_MostRecentGoodRabbitPosition = localOffset;
-		m_Rabbit.transform.position = (localOffset.normalized * 2.0f) + transform.position + (Vector3.up * m_RabbitVerticalOffset);
+		m_Rabbit.transform.position = (localOffset.normalized * 2.0f) + player.physicPlatform.transform.position + (Vector3.up * m_RabbitVerticalOffset);
 	}
 
 	private void RotateToRabbit() {
 		//Rabbit vector
-		Vector3 rabbitVector = (m_Rabbit.transform.position - (Vector3.up * m_RabbitVerticalOffset)) - transform.position;
+		Vector3 rabbitVector = (m_Rabbit.transform.position - (Vector3.up * m_RabbitVerticalOffset)) - player.physicPlatform.transform.position;
 		rabbitVector.y = 0.0f;
 
-		Vector3 frontVector = transform.forward;
+		Vector3 frontVector = player.physicPlatform.transform.forward;
 		frontVector.y = 0.0f;
 
-		Vector3 rightVector = transform.right;
+		Vector3 rightVector = player.physicPlatform.transform.right;
 		rightVector.y = 0.0f;
 
 		float theta = Vector3.Dot(rightVector.normalized, rabbitVector.normalized);

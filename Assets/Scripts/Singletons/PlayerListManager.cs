@@ -19,7 +19,6 @@ public class PlayerListManager : MonoBehaviour {
     public PlayerJoiningEvent playerJoining = new PlayerJoiningEvent();
     public PlayerLeavingEvent playerLeaving = new PlayerLeavingEvent();
     public GameStartingEvent gameStartingEvent = new GameStartingEvent();
-    private bool startGameFlag = false;
     SoundManager sm;
 
     public static PlayerListManager Instance {get; private set;}

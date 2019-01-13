@@ -19,7 +19,9 @@ public class PlayerCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Cannonball")){
+		Debug.Log("he");
+		if (collision.gameObject.CompareTag("CanonBall")){
+			Debug.Log("ha");
             playerHitByCannonBall.Invoke();
         }
     }

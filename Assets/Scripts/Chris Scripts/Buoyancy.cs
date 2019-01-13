@@ -5,7 +5,6 @@ using UnityEngine;
 public class Buoyancy : MonoBehaviour {
 
     public List<GameObject> m_BuoyancyBalls;
-    public GameObject m_WaterPlane;
     public float bounceDamp = 0.5f;
     public float forcePerMeter = 0.5f;
     public float floatHeightOffset = 0.0f;
@@ -15,11 +14,12 @@ public class Buoyancy : MonoBehaviour {
 
     private float rhoWater = 1027f;
     public float buoyancyMultiplier = 1.0f;
+	private Rigidbody selfRigidbody;
 
     // Use this for initialization
     void Start ()
     {
-		
+		selfRigidbody = GetComponent<Rigidbody>();	
 	}
 
     void Update()
@@ -32,7 +32,7 @@ public class Buoyancy : MonoBehaviour {
     {
 		foreach (GameObject buoyancyBall in m_BuoyancyBalls)
         {
-            /*
+			/*
             if (buoyancyBall.transform.position.y < m_WaterPlane.transform.position.y)
             {
                 float distance = (m_WaterPlane.transform.position.y + floatHeightOffset) - buoyancyBall.transform.position.y;
@@ -44,11 +44,11 @@ public class Buoyancy : MonoBehaviour {
                 forceMultiplier = Mathf.Clamp(forceMultiplier - bounceDamping, 0.0f, 1000.0f);
 
                 Vector3 uplift = /*(-Physics.gravity / m_BuoyancyBalls.Count) + *///(Vector3.up * forceMultiplier * gameObject.GetComponent<Rigidbody>().mass);
-                                                                                  //gameObject.GetComponent<Rigidbody>().AddForceAtPosition(uplift, buoyancyBall.transform.position, ForceMode.Force);
+																				  //gameObject.GetComponent<Rigidbody>().AddForceAtPosition(uplift, buoyancyBall.transform.position, ForceMode.Force);
 
-            //}
+			//}
 
-            gameObject.GetComponent<Rigidbody>().AddForceAtPosition(GetBuoyancyForce(rhoWater, buoyancyBall), buoyancyBall.transform.position, ForceMode.Force);
+			selfRigidbody.AddForceAtPosition(GetBuoyancyForce(rhoWater, buoyancyBall), buoyancyBall.transform.position, ForceMode.Force);
         }
 
         //float translation = Input.GetAxis("Vertical") * speed;
@@ -64,7 +64,7 @@ public class Buoyancy : MonoBehaviour {
     public void ForwardThrust(float amount)
     {
         Vector3 offset = (gameObject.transform.forward * -1.0f) + (gameObject.transform.up * -0.1f);
-        gameObject.GetComponent<Rigidbody>().AddForceAtPosition(gameObject.transform.forward * amount, gameObject.transform.position + offset, ForceMode.Force);
+		selfRigidbody.AddForceAtPosition(gameObject.transform.forward * amount, gameObject.transform.position + offset, ForceMode.Force);
     }
 
     private Vector3 GetBuoyancyForce(float rho, GameObject buoyancyBall)

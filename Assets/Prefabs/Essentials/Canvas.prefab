@@ -466,6 +466,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4701f3a59ba78d14aaaa49fd3d7a37b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelPlayerJoinPrefab: {fileID: 1659016854983134, guid: c68d2cb7e9bceca49b247cc96d43f03a,
+    type: 3}
   panelGameStarting: {fileID: 1370595966}
   panelPlayerJoin: {fileID: 1136696225614852}
 --- !u!1 &1305425373765206

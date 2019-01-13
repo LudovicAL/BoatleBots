@@ -7,7 +7,7 @@ public class CanvasManager : MonoBehaviour
 {
     public static CanvasManager Instance { get; private set; }
 
-    public GameObject panelGameStarting;
+	public GameObject panelGameStarting;
     public GameObject panelPlayerJoin;
 
     private void Awake()

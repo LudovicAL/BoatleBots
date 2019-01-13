@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerSpawner : MonoBehaviour {
 
+	public GameObject avatarPrefab;
 	public static PlayerSpawner Instance {get; private set;}
 
 	private void Awake() {
@@ -22,7 +23,7 @@ public class PlayerSpawner : MonoBehaviour {
 	}
 
 	private void OnPlayerJoining(PlayerId playerId, bool gameFull) {
-		playerId.avatar = Instantiate(ResourcesLoader.Instance.avatarPrefab.gameObject, playerId.spawnPoint, Quaternion.identity);
+		playerId.avatar = Instantiate(avatarPrefab.gameObject, playerId.spawnPoint, Quaternion.identity);
 		playerId.avatar.GetComponent<Player>().playerId = playerId;
         foreach (GameObject sail in playerId.avatar.GetComponent<Player>().sails) {
             sail.GetComponent<MeshRenderer>().material.color = playerId.color;
