@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Rigidbody))]
 public class PlayerActions : MonoBehaviour {
 
 	public Player player;
@@ -15,7 +14,7 @@ public class PlayerActions : MonoBehaviour {
 	public float m_MaxSpeed;
 	public float m_AccelerationSpeed;
 	public float m_DeccelerationSpeed;
-	private Rigidbody selfRigidbody;
+	public Rigidbody selfRigidbody;
 	private float m_Speed;
 	private bool m_AreSailsUp;
 
@@ -30,7 +29,6 @@ public class PlayerActions : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		selfRigidbody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
