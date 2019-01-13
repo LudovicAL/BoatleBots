@@ -9102,6 +9102,7 @@ MonoBehaviour:
   m_MaxSpeed: 0
   m_AccelerationSpeed: 0
   m_DeccelerationSpeed: 0
+  selfRigidbody: {fileID: 796214769}
   playerAttackingLeft:
     m_PersistentCalls:
       m_Calls: []
