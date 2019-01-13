@@ -24,9 +24,12 @@ public class PlayerSpawner : MonoBehaviour {
 	private void OnPlayerJoining(PlayerId playerId, bool gameFull) {
 		playerId.avatar = Instantiate(ResourcesLoader.Instance.avatarPrefab.gameObject, playerId.spawnPoint, Quaternion.identity);
 		playerId.avatar.GetComponent<Player>().playerId = playerId;
-	}
+        foreach (GameObject sail in playerId.avatar.GetComponent<Player>().sails) {
+            sail.GetComponent<MeshRenderer>().material.color = playerId.color;
+        }
+    }
 
-	private void OnPlayerLeaving(PlayerId playerId) {
+    private void OnPlayerLeaving(PlayerId playerId) {
 		if (playerId.avatar != null) {
 			Destroy(playerId.avatar);
 		}

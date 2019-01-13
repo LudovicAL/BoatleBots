@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     public List<GameObject> leftCannons;
     public List<GameObject> rightCannons;
     public PlayerCollision playerCollision;
+    public List<GameObject> sails;
 
     // Use this for initialization
     void Start () {

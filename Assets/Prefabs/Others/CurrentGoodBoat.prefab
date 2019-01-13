@@ -9048,6 +9048,25 @@ MonoBehaviour:
   - {fileID: 282968161}
   - {fileID: 2044740025}
   playerCollision: {fileID: 1388546668}
+  sails:
+  - {fileID: 969759190}
+  - {fileID: 603994625}
+  - {fileID: 548995052}
+  - {fileID: 243216305}
+  - {fileID: 437380793}
+  - {fileID: 664209781}
+  - {fileID: 1943427061}
+  - {fileID: 276977159}
+  - {fileID: 1479181737}
+  - {fileID: 301457405}
+  - {fileID: 1420615316}
+  - {fileID: 1065473528}
+  - {fileID: 1254320310}
+  - {fileID: 1281906903}
+  - {fileID: 95971806}
+  - {fileID: 903085408}
+  - {fileID: 86399730}
+  - {fileID: 1990721509}
 --- !u!54 &1388546675
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9257,6 +9276,7 @@ MonoBehaviour:
   smokeAndFirePrefab: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78,
     type: 3}
   cannonForce: 3000
+  coolingDownTime: 3
 --- !u!114 &1388546668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10978,12 +10998,12 @@ PrefabInstance:
       value: 0.109400064
       objectReference: {fileID: 0}
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.27445024
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.11019
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.27445024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
@@ -11053,12 +11073,12 @@ PrefabInstance:
       value: 0.109400064
       objectReference: {fileID: 0}
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.27445024
-      objectReference: {fileID: 0}
-    - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.11019
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.27445024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}

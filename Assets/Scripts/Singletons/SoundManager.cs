@@ -28,6 +28,7 @@ public class SoundManager : MonoBehaviour
 
     public void playThemeSong()
     {
+        Debug.Log("Playing theme song");
         audioSource1.loop = false;
         audioSource1.clip = themeSong;
         audioSource1.Play();
@@ -53,7 +54,7 @@ public class SoundManager : MonoBehaviour
     {
         cannonSound = Resources.Load<AudioClip>("Audio/cannonShot");
         splooshSound = Resources.Load<AudioClip>("Audio/waterSploosh");
-        themeSong = Resources.Load<AudioClip>("Audio/Pirate Music Instrumental - The High Seas(320  kbps)");
+        themeSong = Resources.Load<AudioClip>("Audio/themeSong");
     }
 
     void Awake()
