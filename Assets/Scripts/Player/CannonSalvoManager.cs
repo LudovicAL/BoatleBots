@@ -53,8 +53,7 @@ public class CannonSalvoManager : MonoBehaviour {
 
     public void ShootSalvoRight(PlayerId playerid)
     {
-        if (!isCoolingDownRight)
-        {
+        if (!isCoolingDownRight) {
             StartCoroutine(shootSalvoCoroutine(player.rightCannons));
             isCoolingDownRight = true;
             endOfCoolingDownRight = Time.time + coolingDownTime;
