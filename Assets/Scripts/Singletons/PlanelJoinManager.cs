@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlanelJoinManager : MonoBehaviour {
 
+	public GameObject panelPlayerJoinedPrefab;
     public static PlanelJoinManager Instance {get; private set;}
 
     private void Awake() {
@@ -23,20 +24,24 @@ public class PlanelJoinManager : MonoBehaviour {
     }
 
     private void OnPlayerJoining(PlayerId playerId, bool gameFull) {
-        playerId.panelJoin = Instantiate(ResourcesLoader.Instance.panelPlayerJoinedPrefab, ResourcesLoader.Instance.panelPlayerListTransform);
+        playerId.panelJoin = Instantiate(panelPlayerJoinedPrefab, CanvasManager.Instance.panelPlayerListTransform);
         playerId.panelJoin.GetComponent<RectTransform>().localScale = Vector3.one;
         playerId.panelJoin.transform.Find("Text").GetComponent<Text>().text = playerId.playerName + " joined the game!";
         if (gameFull) {
-            ResourcesLoader.Instance.panelJoinInstruction.SetActive(false);
+            CanvasManager.Instance.panelJoinInstruction.SetActive(false);
         }
-		Canvas.ForceUpdateCanvases();
+		if (PlayerListManager.Instance.listOfPlayers.Count > 1) {
+			CanvasManager.Instance.panelStartInstruction.SetActive(true);
+		}
 	}
 
-    private void OnPlayerLeaving(PlayerId playerId) {
-        if (playerId.panelJoin != null) {
-            Destroy(playerId.panelJoin);
-        }
-        ResourcesLoader.Instance.panelJoinInstruction.SetActive(true);
-		Canvas.ForceUpdateCanvases();
+	private void OnPlayerLeaving(PlayerId playerId) {
+		if (playerId.panelJoin != null) {
+			Destroy(playerId.panelJoin);
+		}
+		if (PlayerListManager.Instance.listOfPlayers.Count < 2) {
+			CanvasManager.Instance.panelStartInstruction.SetActive(false);
+		}
+        CanvasManager.Instance.panelJoinInstruction.SetActive(true);
 	}
 }

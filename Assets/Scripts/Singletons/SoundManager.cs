@@ -4,79 +4,122 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource audioSource1;                //Drag a reference to the audio source which will play the sound effects.
-    public AudioSource audioSource2;                //Drag a reference to the audio source which will play the music.
-    public static SoundManager instance = null;     //Allows other scripts to call functions from SoundManager.             
-    public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
+    public AudioSource audioSourceClip1;
+	public AudioSource audioSourceClip2;
+	public AudioSource audioSourceClip3;
+	public AudioSource audioSourceSong;
+	public static SoundManager Instance { get; private set; }
+	public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
     public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
 
     public AudioClip cannonSound;
     public AudioClip splooshSound;
     public AudioClip themeSong;
+	public AudioClip playerJoinSound;
+	public AudioClip playerLeaveSound;
+	public AudioClip endGameSound;
+	public AudioClip countDownSound;
+	public AudioClip boatExplosionSound;
 
-    public void playCannonSound()
-    {
-        audioSource2.clip = cannonSound;
-        audioSource2.Play();
+	private void Awake() {
+		if (Instance == null) {
+			Instance = this;
+		} else if (Instance != this) {
+			Destroy(gameObject);
+		}
+		DontDestroyOnLoad(gameObject);
+	}
+
+	void Start() {
+		LoadSounds();
+		audioSourceSong.loop = true;
+		audioSourceSong.clip = themeSong;
+		GameStatesManager.Instance.GameStateChanged.AddListener(OnGameStateChange);
+	}
+
+	private void OnGameStateChange() {
+		switch (GameStatesManager.gameState) {
+			case (StaticData.AvailableGameStates.Menu):
+				StopThemeSong();
+				break;
+			case (StaticData.AvailableGameStates.Starting):
+				PlayThemeSong();
+				break;
+			case (StaticData.AvailableGameStates.Playing):
+				PlayThemeSong();
+				break;
+			case (StaticData.AvailableGameStates.Pausing):
+				PauseThemeSong();
+				break;
+			case (StaticData.AvailableGameStates.Ending):
+				StopThemeSong();
+				break;
+		}
+	}
+
+    public void PlayCannonSound() {
+		PlaySingle1(cannonSound);
     }
 
-    public void playSplooshSound()
-    {
-        audioSource2.clip = splooshSound;
-        audioSource2.Play();
+    public void PlaySplooshSound() {
+		PlaySingle2(splooshSound);
     }
 
-    public void playThemeSong()
-    {
-        Debug.Log("Playing theme song");
-        audioSource1.loop = false;
-        audioSource1.clip = themeSong;
-        audioSource1.Play();
+	public void PlayBoatExplosionSound() {
+		PlaySingle3(boatExplosionSound);
+	}
+
+	public void PlayPlayerJoinSound() {
+		PlaySingle1(playerJoinSound);
+	}
+
+	public void PlayPlayerLeaveSound() {
+		PlaySingle2(playerLeaveSound);
+	}
+
+	public void PlayCountDownSound() {
+		PlaySingle3(countDownSound);
+	}
+
+	public void PlayEndGameSound() {
+		PlaySingle2(endGameSound);
+	}
+
+	public void PlayThemeSong() {
+		audioSourceSong.Play();
     }
 
-    public void stopThemeSong()
-    {
-        audioSource1.Stop();
+	public void PauseThemeSong() {
+		audioSourceSong.Pause();
+	}
+
+    public void StopThemeSong() {
+		audioSourceSong.Stop();
     }
 
-    void Start()
-    {
-        loadSounds();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void loadSounds()
-    {
-        cannonSound = Resources.Load<AudioClip>("Audio/cannonShot");
+    void LoadSounds() {
+		boatExplosionSound = Resources.Load<AudioClip>("Audio/BoatExplosion");
+		cannonSound = Resources.Load<AudioClip>("Audio/cannonShot");
         splooshSound = Resources.Load<AudioClip>("Audio/waterSploosh");
-        themeSong = Resources.Load<AudioClip>("Audio/themeSong");
+		playerJoinSound = Resources.Load<AudioClip>("Audio/PlayerJoin");
+		playerLeaveSound = Resources.Load<AudioClip>("Audio/PlayerLeave");
+		countDownSound = Resources.Load<AudioClip>("Audio/CountDown");
+		endGameSound = Resources.Load<AudioClip>("Audio/EndGame");
+		themeSong = Resources.Load<AudioClip>("Audio/themeSong");
     }
 
-    void Awake()
-    {
-        //Check if there is already an instance of SoundManager
-        if (instance == null)
-            //if not, set it to this.
-            instance = this;
-        //If instance already exists:
-        else if (instance != this)
-            //Destroy this, this enforces our singleton pattern so there can only be one instance of SoundManager.
-            Destroy(gameObject);
+    public void PlaySingle1(AudioClip clip) {
+        audioSourceClip1.clip = clip;
+		audioSourceClip1.Play();
     }
 
+	public void PlaySingle2(AudioClip clip) {
+		audioSourceClip2.clip = clip;
+		audioSourceClip2.Play();
+	}
 
-    //Used to play single sound clips.
-    public void PlaySingle(AudioClip clip)
-    {
-        //Set the clip of our efxSource audio source to the clip passed in as a parameter.
-        audioSource2.clip = clip;
-
-        //Play the clip.
-        audioSource2.Play();
-    }
+	public void PlaySingle3(AudioClip clip) {
+		audioSourceClip3.clip = clip;
+		audioSourceClip3.Play();
+	}
 }

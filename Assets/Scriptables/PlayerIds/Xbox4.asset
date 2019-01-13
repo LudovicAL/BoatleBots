@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381fef0fba5236f49ac2bb597d58b07c, type: 3}
   m_Name: Xbox4
   m_EditorClassIdentifier: 
-  playerName: Xbox4
+  playerName: Blue-Purple (Xbox 4)
   controls: {fileID: 11400000, guid: 7f71f8481af297b478773bf7c4554f64, type: 2}
   setOfSoundsFx: {fileID: 11400000, guid: 7ff31ca71b8fdf44699659dd15e2fed0, type: 2}
+  currentHealth: 100
   maxHealth: 100
-  color: {r: 0.2789445, g: 0, b: 1, a: 0}
-  spawnPoint: {x: 6, y: 0, z: 4}
+  color: {r: 0.2789445, g: 0, b: 1, a: 1}
+  spawnPoint: {x: -11, y: 0, z: -20}
   player: {fileID: 0}
   panelJoin: {fileID: 0}
   panelHealthBar: {fileID: 0}

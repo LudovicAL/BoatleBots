@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381fef0fba5236f49ac2bb597d58b07c, type: 3}
   m_Name: Keyboard2
   m_EditorClassIdentifier: 
-  playerName: Keyboard2
+  playerName: Pink (Keyboard 2)
   controls: {fileID: 11400000, guid: e9285a975e568654da2736f22f1cfe15, type: 2}
   setOfSoundsFx: {fileID: 11400000, guid: 7ff31ca71b8fdf44699659dd15e2fed0, type: 2}
+  currentHealth: 100
   maxHealth: 100
-  color: {r: 1, g: 0, b: 0.52353096, a: 0}
-  spawnPoint: {x: 4, y: 0, z: 2}
+  color: {r: 1, g: 0, b: 0.52353096, a: 1}
+  spawnPoint: {x: 10, y: 0, z: 10}
   player: {fileID: 0}
   panelJoin: {fileID: 0}
   panelHealthBar: {fileID: 0}

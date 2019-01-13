@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381fef0fba5236f49ac2bb597d58b07c, type: 3}
   m_Name: Xbox8
   m_EditorClassIdentifier: 
-  playerName: Xbox8
+  playerName: Brown (Xbox 8)
   controls: {fileID: 11400000, guid: 3f9d56c9732995b45b249b3db0fc895b, type: 2}
   setOfSoundsFx: {fileID: 11400000, guid: 7ff31ca71b8fdf44699659dd15e2fed0, type: 2}
+  currentHealth: 100
   maxHealth: 100
-  color: {r: 1, g: 0.45468682, b: 0, a: 0}
-  spawnPoint: {x: 6, y: 0, z: 6}
+  color: {r: 0.6415094, g: 0.40233773, b: 0.20274118, a: 1}
+  spawnPoint: {x: 14, y: 0, z: -16}
   player: {fileID: 0}
   panelJoin: {fileID: 0}
   panelHealthBar: {fileID: 0}

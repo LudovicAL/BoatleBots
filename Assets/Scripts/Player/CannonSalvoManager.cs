@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CannonSalvoManager : MonoBehaviour {
     
@@ -8,38 +9,37 @@ public class CannonSalvoManager : MonoBehaviour {
     public GameObject cannonBallPrefab;
     public GameObject smokeAndFirePrefab;
     public float cannonForce = 300f;
-    
-    public float coolingDownTime = 3.0f;
+
+	public float coolingDownTime = 2.5f;
     private bool isCoolingDownLeft;
     private bool isCoolingDownRight;
     private float endOfCoolingDownLeft;
     private float endOfCoolingDownRight;
 
-    SoundManager sm;
+	private void Awake() {
+	}
 
-    // Use this for initialization
-    void Start() {
+	// Use this for initialization
+	void Start() {
         player.playerActions.playerAttackingLeft.AddListener(ShootSalvoLeft);
         player.playerActions.playerAttackingRight.AddListener(ShootSalvoRight);
 
         isCoolingDownLeft = false;
         isCoolingDownRight = false;
-
-        sm = GameObject.Find("Main Camera").GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
     void Update () {
-        if(isCoolingDownRight) {
-            if (Time.time > endOfCoolingDownRight)
-            {
-                isCoolingDownRight = false;
-            }
-            if (Time.time > endOfCoolingDownLeft)
-            {
-                isCoolingDownLeft = false;
-            }
-        }
+		if (isCoolingDownRight) {
+			if (Time.time > endOfCoolingDownRight) {
+				isCoolingDownRight = false;
+			}
+		}
+		if (isCoolingDownLeft) {
+			if (Time.time > endOfCoolingDownLeft) {
+				isCoolingDownLeft = false;
+			}
+		}
     }
 
     public void ShootSalvoLeft(PlayerId playerid) {
@@ -69,12 +69,11 @@ public class CannonSalvoManager : MonoBehaviour {
     }
 
     private void instantiateAndShootCannonball(GameObject cannon) {
-        GameObject cannonball = Instantiate(cannonBallPrefab, cannon.transform.position, Quaternion.identity);       
+        GameObject cannonball = Instantiate(cannonBallPrefab, cannon.transform.position + cannon.transform.forward * 0.5f, Quaternion.identity);       
         cannonball.GetComponent<Rigidbody>().AddForce(cannon.transform.forward * cannonForce, ForceMode.Impulse);
-
+		cannonball.GetComponent<Cannonball>().sourcePlayerId = player.playerId;
 		cannon.GetComponentInChildren<ParticleSystem>().Play(true);
-
-        sm.playCannonSound();
+		SoundManager.Instance.PlayCannonSound();
     }
 
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 46481275}
   m_Layer: 10
   m_Name: Railing (3)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 46692898}
   m_Layer: 10
   m_Name: Railing (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 69551893}
   m_Layer: 10
   m_Name: CrossBar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 86399732}
   m_Layer: 0
   m_Name: SailSheet (5)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 95971808}
   m_Layer: 0
   m_Name: SailSheet (3)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 104644773}
   m_Layer: 10
   m_Name: Rotateable Sail (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 123963890}
   m_Layer: 10
   m_Name: UpperDeck (3)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -684,7 +684,7 @@ GameObject:
   - component: {fileID: 141362059}
   m_Layer: 10
   m_Name: Railing (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 243216307}
   m_Layer: 0
   m_Name: SailSheet (3)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 276977161}
   m_Layer: 0
   m_Name: SailSheet (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -953,11 +953,10 @@ GameObject:
   m_Component:
   - component: {fileID: 282968162}
   - component: {fileID: 282968167}
-  - component: {fileID: 282968166}
   - component: {fileID: 282968165}
   m_Layer: 10
   m_Name: Cannon Right 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -969,14 +968,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282968161}
-  m_LocalRotation: {x: 0.041636318, y: -0.71670204, z: -0.0147457905, w: -0.69597936}
+  m_LocalRotation: {x: 0.030843573, y: -0.7064338, z: -0.030843573, w: -0.7064338}
   m_LocalPosition: {x: 0.275, y: 1.6389999, z: -0.349}
   m_LocalScale: {x: 0.109636374, y: 0.110265195, z: 0.27517447}
   m_Children:
   - {fileID: 5031933378532595948}
   m_Father: {fileID: 1146536048153331796}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -4.5360003, y: -268.22998, z: -2.2510002}
+  m_LocalEulerAnglesHint: {x: -5, y: -270, z: 0}
 --- !u!33 &282968167
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -985,19 +984,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282968161}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &282968166
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282968161}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &282968165
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1049,7 +1035,7 @@ GameObject:
   - component: {fileID: 301457407}
   m_Layer: 0
   m_Name: SailSheet (3)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1136,11 +1122,10 @@ GameObject:
   m_Component:
   - component: {fileID: 362916276}
   - component: {fileID: 362916281}
-  - component: {fileID: 362916280}
   - component: {fileID: 362916279}
   m_Layer: 10
   m_Name: Cannon Left 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1152,14 +1137,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362916275}
-  m_LocalRotation: {x: -0.05570298, y: -0.69668865, z: -0.005137809, w: 0.7151893}
+  m_LocalRotation: {x: -0.030300586, y: -0.7186551, z: -0.03137717, w: 0.69399726}
   m_LocalPosition: {x: -0.339, y: 1.62, z: -0.621}
   m_LocalScale: {x: 0.11005538, y: 0.11054098, z: 0.27458084}
   m_Children:
   - {fileID: 6832826495668208454}
   m_Father: {fileID: 1146536048153331796}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: -4.9820004, y: -88.675, z: 4.045}
+  m_LocalEulerAnglesHint: {x: -5, y: -92, z: 0}
 --- !u!33 &362916281
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1168,19 +1153,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362916275}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &362916280
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362916275}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &362916279
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1228,11 +1200,10 @@ GameObject:
   m_Component:
   - component: {fileID: 410587175}
   - component: {fileID: 410587180}
-  - component: {fileID: 410587179}
   - component: {fileID: 410587178}
   m_Layer: 10
   m_Name: Cannon Left 3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1244,14 +1215,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410587174}
-  m_LocalRotation: {x: -0.055702996, y: -0.69668865, z: -0.005137816, w: 0.7151893}
+  m_LocalRotation: {x: -0.031377178, y: -0.6939972, z: -0.030300584, w: 0.7186552}
   m_LocalPosition: {x: -0.317, y: 1.661, z: -0.04}
   m_LocalScale: {x: 0.1101004, y: 0.110869355, z: 0.27527574}
   m_Children:
   - {fileID: 39382237415558165}
   m_Father: {fileID: 1146536048153331796}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -4.9820004, y: -88.675, z: 4.045}
+  m_LocalEulerAnglesHint: {x: -5, y: -88, z: 0}
 --- !u!33 &410587180
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1260,19 +1231,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410587174}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &410587179
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410587174}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &410587178
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1324,7 +1282,7 @@ GameObject:
   - component: {fileID: 412171122}
   m_Layer: 10
   m_Name: CrossBar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1415,7 +1373,7 @@ GameObject:
   - component: {fileID: 437380795}
   m_Layer: 0
   m_Name: SailSheet (4)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6195,7 +6153,7 @@ GameObject:
   - component: {fileID: 508461685}
   m_Layer: 10
   m_Name: UpperDeck (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6286,7 +6244,7 @@ GameObject:
   - component: {fileID: 548995054}
   m_Layer: 0
   m_Name: SailSheet (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6377,7 +6335,7 @@ GameObject:
   - component: {fileID: 578843916}
   m_Layer: 10
   m_Name: CollisionMast
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6468,7 +6426,7 @@ GameObject:
   - component: {fileID: 603994627}
   m_Layer: 0
   m_Name: SailSheet (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6555,11 +6513,10 @@ GameObject:
   m_Component:
   - component: {fileID: 643263685}
   - component: {fileID: 643263690}
-  - component: {fileID: 643263689}
   - component: {fileID: 643263688}
   m_Layer: 10
   m_Name: Cannon Right 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6571,14 +6528,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643263684}
-  m_LocalRotation: {x: 0.041636318, y: -0.71670204, z: -0.0147457905, w: -0.69597936}
+  m_LocalRotation: {x: 0.030300576, y: -0.71865535, z: -0.03137718, w: -0.693997}
   m_LocalPosition: {x: 0.265, y: 1.6259999, z: -0.64}
   m_LocalScale: {x: 0.10965643, y: 0.11042609, z: 0.27552634}
   m_Children:
   - {fileID: 1870120111956471530}
   m_Father: {fileID: 1146536048153331796}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -4.5360003, y: -268.22998, z: -2.2510002}
+  m_LocalEulerAnglesHint: {x: -5, y: -268, z: 0}
 --- !u!33 &643263690
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6587,19 +6544,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643263684}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &643263689
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 643263684}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &643263688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6651,7 +6595,7 @@ GameObject:
   - component: {fileID: 664209783}
   m_Layer: 0
   m_Name: SailSheet (5)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6864,7 +6808,7 @@ GameObject:
   - component: {fileID: 777401102}
   m_Layer: 10
   m_Name: Nose
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7094,7 +7038,7 @@ GameObject:
   - component: {fileID: 839655112}
   m_Layer: 10
   m_Name: Mast
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7182,7 +7126,7 @@ GameObject:
   - component: {fileID: 858033409}
   m_Layer: 0
   m_Name: Sail (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7221,7 +7165,7 @@ GameObject:
   - component: {fileID: 903085410}
   m_Layer: 0
   m_Name: SailSheet (4)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7312,7 +7256,7 @@ GameObject:
   - component: {fileID: 908889462}
   m_Layer: 10
   m_Name: Mast
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7403,7 +7347,7 @@ GameObject:
   - component: {fileID: 928216004}
   m_Layer: 10
   m_Name: CrossBarTop
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7494,7 +7438,7 @@ GameObject:
   - component: {fileID: 937907588}
   m_Layer: 10
   m_Name: CrossBar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7585,7 +7529,7 @@ GameObject:
   - component: {fileID: 969759192}
   m_Layer: 0
   m_Name: SailSheet
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7767,7 +7711,7 @@ GameObject:
   - component: {fileID: 1015292410}
   m_Layer: 10
   m_Name: UpperDeck (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7858,7 +7802,7 @@ GameObject:
   - component: {fileID: 1041992191}
   m_Layer: 10
   m_Name: UpperDeck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8040,7 +7984,7 @@ GameObject:
   - component: {fileID: 1065473530}
   m_Layer: 0
   m_Name: SailSheet (5)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8131,7 +8075,7 @@ GameObject:
   - component: {fileID: 1162873498}
   m_Layer: 10
   m_Name: CrossBarTop
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8222,7 +8166,7 @@ GameObject:
   - component: {fileID: 1218037992}
   m_Layer: 10
   m_Name: CrossBarTop
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8313,7 +8257,7 @@ GameObject:
   - component: {fileID: 1254320312}
   m_Layer: 0
   m_Name: SailSheet (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8404,7 +8348,7 @@ GameObject:
   - component: {fileID: 1281906905}
   m_Layer: 0
   m_Name: SailSheet (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8497,10 +8441,9 @@ GameObject:
   - component: {fileID: 1388546671}
   - component: {fileID: 1388546670}
   - component: {fileID: 1388546669}
-  - component: {fileID: 1388546668}
   m_Layer: 10
   m_Name: CurrentGoodBoat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8548,7 +8491,7 @@ MonoBehaviour:
   - {fileID: 643263684}
   - {fileID: 282968161}
   - {fileID: 2044740025}
-  playerCollision: {fileID: 1388546668}
+  playerCollision: {fileID: 856832300451599119}
   sails:
   - {fileID: 969759190}
   - {fileID: 603994625}
@@ -8625,7 +8568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edb9e9cdb43c354eb2549f88d5ac609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 100
   player: {fileID: 1388546676}
   playerTakingDamage:
     m_PersistentCalls:
@@ -8637,6 +8579,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: PlayerHealth+PlayerDying, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  explosionPrefab: {fileID: 769660255860781991, guid: a8fb7dd160dfa4a4397d588775ff2d6d,
+    type: 3}
 --- !u!114 &1388546671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8764,25 +8708,7 @@ MonoBehaviour:
   smokeAndFirePrefab: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78,
     type: 3}
   cannonForce: 1500
-  coolingDownTime: 3
---- !u!114 &1388546668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1305960001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b919e45a58a9e4b92c7e30670c0c37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1388546676}
-  playerHitByCannonBall:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: PlayerCollision+PlayerHitByCannonball, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  coolingDownTime: 2.5
 --- !u!1 &1316745762
 GameObject:
   m_ObjectHideFlags: 0
@@ -8794,7 +8720,7 @@ GameObject:
   - component: {fileID: 1316745763}
   m_Layer: 10
   m_Name: Rotateable Sail (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8830,7 +8756,7 @@ GameObject:
   - component: {fileID: 1344660711}
   m_Layer: 10
   m_Name: Deck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8917,11 +8843,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1356554145}
   - component: {fileID: 1356554150}
-  - component: {fileID: 1356554149}
   - component: {fileID: 1356554148}
   m_Layer: 10
   m_Name: Cannon Left 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8933,14 +8858,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356554144}
-  m_LocalRotation: {x: -0.05570299, y: -0.69668865, z: -0.005137805, w: 0.7151893}
+  m_LocalRotation: {x: -0.030843573, y: -0.7064338, z: -0.030843573, w: 0.7064338}
   m_LocalPosition: {x: -0.327, y: 1.642, z: -0.33}
   m_LocalScale: {x: 0.110080436, y: 0.11070751, z: 0.2749247}
   m_Children:
   - {fileID: 7943671909579309789}
   m_Father: {fileID: 1146536048153331796}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -4.9820004, y: -88.675, z: 4.045}
+  m_LocalEulerAnglesHint: {x: -5, y: -90, z: 0}
 --- !u!33 &1356554150
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8949,19 +8874,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356554144}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &1356554149
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356554144}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1356554148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9013,7 +8925,7 @@ GameObject:
   - component: {fileID: 1420615318}
   m_Layer: 0
   m_Name: SailSheet (4)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9104,7 +9016,7 @@ GameObject:
   - component: {fileID: 1479181739}
   m_Layer: 0
   m_Name: SailSheet (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9195,7 +9107,7 @@ GameObject:
   - component: {fileID: 1550402672}
   m_Layer: 10
   m_Name: UpperDeck (4)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9286,7 +9198,7 @@ GameObject:
   - component: {fileID: 1622800036}
   m_Layer: 10
   m_Name: Mast
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9374,7 +9286,7 @@ GameObject:
   - component: {fileID: 1671014198}
   m_Layer: 0
   m_Name: Sail
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9410,7 +9322,7 @@ GameObject:
   - component: {fileID: 1696538524}
   m_Layer: 10
   m_Name: Rotateable Sail
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9443,7 +9355,7 @@ GameObject:
   - component: {fileID: 1697020828}
   m_Layer: 0
   m_Name: Sail (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9482,7 +9394,7 @@ GameObject:
   - component: {fileID: 1795232263}
   m_Layer: 10
   m_Name: Railing
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9573,7 +9485,7 @@ GameObject:
   - component: {fileID: 1819261278}
   m_Layer: 10
   m_Name: CollisionBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9755,7 +9667,7 @@ GameObject:
   - component: {fileID: 1943427063}
   m_Layer: 0
   m_Name: SailSheet
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9846,7 +9758,7 @@ GameObject:
   - component: {fileID: 1990721511}
   m_Layer: 0
   m_Name: SailSheet
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9933,11 +9845,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2044740026}
   - component: {fileID: 2044740031}
-  - component: {fileID: 2044740030}
   - component: {fileID: 2044740029}
   m_Layer: 10
   m_Name: Cannon Right 3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9949,14 +9860,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044740025}
-  m_LocalRotation: {x: 0.041636318, y: -0.71670204, z: -0.0147457905, w: -0.69597936}
+  m_LocalRotation: {x: 0.03137717, y: -0.6939973, z: -0.03030059, w: -0.7186551}
   m_LocalPosition: {x: 0.286, y: 1.6489999, z: -0.058}
   m_LocalScale: {x: 0.10961638, y: 0.11010423, z: 0.27482307}
   m_Children:
   - {fileID: 831934634059501650}
   m_Father: {fileID: 1146536048153331796}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -4.5360003, y: -268.22998, z: -2.2510002}
+  m_LocalEulerAnglesHint: {x: -5, y: -272, z: 0}
 --- !u!33 &2044740031
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9965,19 +9876,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044740025}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &2044740030
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044740025}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2044740029
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10117,9 +10015,10 @@ GameObject:
   - component: {fileID: 1146536048153331796}
   - component: {fileID: 5559369679620004121}
   - component: {fileID: 736087075715048684}
+  - component: {fileID: 856832300451599119}
   m_Layer: 10
   m_Name: Deck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10193,6 +10092,24 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &856832300451599119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7871199404269546384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b919e45a58a9e4b92c7e30670c0c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1388546676}
+  playerHitByCannonBall:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PlayerCollision+PlayerHitByCannonball, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &37632479453969937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10203,6 +10120,10 @@ PrefabInstance:
     - target: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_Name
       value: Chris_SmokeAndFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10247,6 +10168,10 @@ PrefabInstance:
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766211462781820, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
@@ -10267,6 +10192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chris_SmokeAndFire
       objectReference: {fileID: 0}
+    - target: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -10310,6 +10239,10 @@ PrefabInstance:
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766211462781820, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
@@ -10330,6 +10263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chris_SmokeAndFire
       objectReference: {fileID: 0}
+    - target: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -10373,6 +10310,10 @@ PrefabInstance:
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766211462781820, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
@@ -10393,6 +10334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chris_SmokeAndFire
       objectReference: {fileID: 0}
+    - target: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -10436,6 +10381,10 @@ PrefabInstance:
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766211462781820, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
@@ -10456,6 +10405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chris_SmokeAndFire
       objectReference: {fileID: 0}
+    - target: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -10499,6 +10452,10 @@ PrefabInstance:
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766211462781820, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
@@ -10519,6 +10476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chris_SmokeAndFire
       objectReference: {fileID: 0}
+    - target: {fileID: 1143896640786504, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -10562,6 +10523,10 @@ PrefabInstance:
     - target: {fileID: 4041142350098948, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766211462781820, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97be96c1f1343f4ea67bdd2a9dc7a78, type: 3}

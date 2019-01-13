@@ -9,7 +9,7 @@ public class PlayerHealthBarEditor : Editor {
 
 		PlayerHealthBar playerHealthBar = (PlayerHealthBar)target;
 		if (GUILayout.Button("OnTakingDamage")) {
-			playerHealthBar.OnTakingDamage(playerHealthBar.player.playerId, (float)playerHealthBar.player.playerHealth.currentHealth / (float) playerHealthBar.player.playerId.maxHealth);
+			playerHealthBar.OnTakingDamage(playerHealthBar.player.playerId, (float)playerHealthBar.player.playerId.currentHealth / (float) playerHealthBar.player.playerId.maxHealth);
 		}
 	}
 }

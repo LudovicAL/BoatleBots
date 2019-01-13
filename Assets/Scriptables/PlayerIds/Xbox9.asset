@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381fef0fba5236f49ac2bb597d58b07c, type: 3}
   m_Name: Xbox9
   m_EditorClassIdentifier: 
-  playerName: Xbox9
+  playerName: Dark Red (Xbox 9)
   controls: {fileID: 11400000, guid: f793b7c5ee0eff94d9369bcd4293845f, type: 2}
   setOfSoundsFx: {fileID: 11400000, guid: 7ff31ca71b8fdf44699659dd15e2fed0, type: 2}
+  currentHealth: 100
   maxHealth: 100
-  color: {r: 1, g: 0, b: 0.32224655, a: 0}
-  spawnPoint: {x: 8, y: 0, z: 6}
+  color: {r: 0.5, g: 0.16745284, b: 0.27438954, a: 1}
+  spawnPoint: {x: 19, y: 0, z: 9}
   player: {fileID: 0}
   panelJoin: {fileID: 0}
   panelHealthBar: {fileID: 0}

@@ -17,12 +17,12 @@ public class PlayerCollision : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-		Debug.Log("he");
+    void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.CompareTag("CanonBall")){
-			Debug.Log("ha");
-            playerHitByCannonBall.Invoke();
+			if (collision.gameObject.GetComponent<Cannonball>().sourcePlayerId != player.playerId) {
+				playerHitByCannonBall.Invoke();
+				Destroy(collision.gameObject);
+			}
         }
     }
 

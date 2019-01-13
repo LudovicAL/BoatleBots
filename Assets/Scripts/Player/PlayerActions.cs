@@ -17,6 +17,7 @@ public class PlayerActions : MonoBehaviour {
 	public Rigidbody selfRigidbody;
 	private float m_Speed;
 	private bool m_AreSailsUp;
+	private bool reversing;
 
 	public PlayerAttackingLeft playerAttackingLeft = new PlayerAttackingLeft();
     public PlayerAttackingRight playerAttackingRight = new PlayerAttackingRight();
@@ -29,47 +30,67 @@ public class PlayerActions : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+		reversing = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.playerId.controls.GetRBumperDown())
-        {
-            ShootSalvoRight();
-        }
-        if (player.playerId.controls.GetLBumperDown())
-        {
-            ShootSalvoLeft();
-        }
+		if (GameStatesManager.gameState == StaticData.AvailableGameStates.Playing) {
+			if (player.playerId.controls.GetRBumperDown()) {
+				ShootSalvoRight();
+			}
+			if (player.playerId.controls.GetLBumperDown()) {
+				ShootSalvoLeft();
+			}
+			if (player.playerId.controls.GetButtonStartDown()) {
+				GameStatesManager.Instance.ChangeGameStateTo(StaticData.AvailableGameStates.Pausing);
+			}
+			if (player.playerId.controls.GetButtonYDown()) {
+				reversing = !reversing;
+			}
+		} else if (GameStatesManager.gameState == StaticData.AvailableGameStates.Pausing) {
+			if (player.playerId.controls.GetButtonStartDown()) {
+				GameStatesManager.Instance.ChangeGameStateTo(StaticData.AvailableGameStates.Playing);
+			}
+		}
     }
 
 	private void FixedUpdate() {
 		Debug.DrawLine(player.physicPlatform.transform.position, player.physicPlatform.transform.position + (player.physicPlatform.transform.forward * 3.0f));
+		if (GameStatesManager.gameState == StaticData.AvailableGameStates.Playing) {			
 
-		Vector3 localOffset = new Vector3(player.playerId.controls.GetLHorizontal(), 0.0f, player.playerId.controls.GetLVertical());
-		if (localOffset.magnitude > 0.25f) {
-			SetTheRabbit(localOffset);
-			m_AreSailsUp = true;
-		} else {
-			SetTheRabbit(m_MostRecentGoodRabbitPosition);
-			m_AreSailsUp = false;
+			Vector3 localOffset = new Vector3(player.playerId.controls.GetLHorizontal(), 0.0f, player.playerId.controls.GetLVertical());
+			if (localOffset.magnitude > 0.25f) {
+				SetTheRabbit(localOffset);
+				m_AreSailsUp = true;
+			} else {
+				SetTheRabbit(m_MostRecentGoodRabbitPosition);
+				m_AreSailsUp = false;
+			}
+
+
+			//Move foward
+			if (m_AreSailsUp) {
+				m_Speed += (Time.fixedDeltaTime * m_AccelerationSpeed);
+				m_Speed = Mathf.Clamp(m_Speed, 0.0f, m_MaxSpeed);
+			} else {
+				m_Speed -= (Time.fixedDeltaTime * m_DeccelerationSpeed);
+				m_Speed = Mathf.Max(m_Speed, 0.0f);
+			}
+			
+			PushBoatForwards();
+
+			RotateToRabbit();
 		}
-
-		//Move foward
-		if (m_AreSailsUp) {
-			m_Speed += (Time.fixedDeltaTime * m_AccelerationSpeed);
-			m_Speed = Mathf.Clamp(m_Speed, 0.0f, m_MaxSpeed);
-		} else {
-			m_Speed -= (Time.fixedDeltaTime * m_DeccelerationSpeed);
-			m_Speed = Mathf.Max(m_Speed, 0.0f);
-		}
-		PushBoatForwards();
-
-		RotateToRabbit();
 	}
 
 	public void PushBoatForwards() {
-		player.buoyancy.ForwardThrust(m_Speed);
+		if (reversing) {
+			player.buoyancy.ForwardThrust(-m_Speed);
+		} else {
+			player.buoyancy.ForwardThrust(m_Speed);
+		}
+
 	}
 
 	private void SetTheRabbit(Vector3 localOffset) {

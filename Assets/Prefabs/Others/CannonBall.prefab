@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4698191684352296}
   - component: {fileID: 33389168517776156}
   - component: {fileID: 23888967222003952}
-  - component: {fileID: 135749458720346414}
   - component: {fileID: 54115291241668986}
   - component: {fileID: 3680845369905122675}
+  - component: {fileID: 6185447677419171129}
   m_Layer: 0
   m_Name: CannonBall
   m_TagString: CanonBall
@@ -80,19 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &135749458720346414
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443647189244252}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &54115291241668986
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -122,3 +109,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeoutDestructor: 5
+--- !u!135 &6185447677419171129
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443647189244252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

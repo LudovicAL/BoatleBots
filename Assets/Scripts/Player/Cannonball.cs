@@ -5,6 +5,8 @@ using UnityEngine;
 public class Cannonball : MonoBehaviour
 {
     public int timeoutDestructor;
+	[HideInInspector]
+	public PlayerId sourcePlayerId;
 
     void Start()
     {

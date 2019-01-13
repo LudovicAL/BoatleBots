@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 381fef0fba5236f49ac2bb597d58b07c, type: 3}
   m_Name: Xbox6
   m_EditorClassIdentifier: 
-  playerName: Xbox6
+  playerName: Neon (Xbox 6)
   controls: {fileID: 11400000, guid: 4d512b6d919cd13489ae9cb40fd4e18f, type: 2}
   setOfSoundsFx: {fileID: 11400000, guid: 7ff31ca71b8fdf44699659dd15e2fed0, type: 2}
+  currentHealth: 100
   maxHealth: 100
-  color: {r: 0.661623, g: 1, b: 0, a: 0}
-  spawnPoint: {x: 2, y: 0, z: 6}
+  color: {r: 0.661623, g: 1, b: 0, a: 1}
+  spawnPoint: {x: -16, y: 0, z: 15}
   player: {fileID: 0}
   panelJoin: {fileID: 0}
   panelHealthBar: {fileID: 0}
