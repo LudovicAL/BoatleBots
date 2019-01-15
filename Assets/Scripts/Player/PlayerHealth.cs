@@ -33,15 +33,17 @@ public class PlayerHealth : MonoBehaviour {
 
 	//Call this function when dealing damage to this player
 	public void TakeDamage(int amount) {
-		player.playerId.currentHealth -= amount;
-		playerTakingDamage.Invoke(player.playerId, (float)player.playerId.currentHealth /(float)player.playerId.maxHealth);
-		if (player.playerId.currentHealth <= 0) {
-			player.playerId.currentHealth = 0;
-			playerDying.Invoke(player.playerId);
-			GameObject explosion = Instantiate(explosionPrefab, player.physicPlatform.transform.position, Quaternion.identity);
-			Destroy(explosion, 3.0f);
-			PlayerListManager.Instance.RemovePlayer(player.playerId);
-			SoundManager.Instance.PlayBoatExplosionSound();
+		if (player.playerId.currentHealth > 0) {
+			player.playerId.currentHealth -= amount;
+			playerTakingDamage.Invoke(player.playerId, (float)player.playerId.currentHealth /(float)player.playerId.maxHealth);
+			if (player.playerId.currentHealth <= 0) {
+				player.playerId.currentHealth = 0;
+				playerDying.Invoke(player.playerId);
+				GameObject explosion = Instantiate(explosionPrefab, player.physicPlatform.transform.position, Quaternion.identity);
+				Destroy(explosion, 3.0f);
+				PlayerListManager.Instance.RemovePlayer(player.playerId);
+				SoundManager.Instance.PlayBoatExplosionSound();
+			}
 		}
 	}
 }
